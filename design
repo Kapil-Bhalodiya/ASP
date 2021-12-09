@@ -1,0 +1,63 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="student.aspx.cs" Inherits="Stud_Manage_Connected.WebForm1" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <center>
+        <h1>Student Form</h1>
+        <p>
+            &nbsp;</p>
+        <asp:Label ID="Label1" runat="server" Text="Roll No.:"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtrno" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Name.:    "></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtname" runat="server"></asp:TextBox>
+        <br />
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label3" runat="server" Text="Class :"></asp:Label>
+        &nbsp;&nbsp;&nbsp;<asp:DropDownList ID="drpclass" runat="server" DataSourceID="SqlDataSource2" DataTextField="class_name" DataValueField="class_id" Height="47px" Width="166px">
+        </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnaddclass" runat="server" OnClick="btnaddcourse_Click" Text="Add Class" />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:student_management_systemConnectionString2 %>" SelectCommand="SELECT * FROM [class]"></asp:SqlDataSource>
+        &nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label4" runat="server" Text="Course :"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:DropDownList ID="drpcourse" runat="server" DataSourceID="SqlDataSource1" DataTextField="course_name" DataValueField="course_id" Height="47px" Width="166px">
+        </asp:DropDownList>
+        &nbsp;&nbsp; &nbsp;&nbsp;
+        <asp:Button ID="btnaddcourse" runat="server" OnClick="btnaddcourse_Click" Text="Add Course" />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:student_management_systemConnectionString %>" SelectCommand="SELECT * FROM [course]"></asp:SqlDataSource>
+        <br />
+        <br />
+        <asp:Label ID="Label5" runat="server" Text="Email :"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="Label6" runat="server" Text="Mobile :"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtmobile" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="Label7" runat="server" Text="DOB :"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtdob" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Button ID="btninsert" runat="server" OnClick="btninsert_Click" Text="Insert" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnupdate" runat="server" OnClick="btnupdate_Click" Text="Update" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btndelete" runat="server" OnClick="btndelete_Click" Text="Delete" />
+        &nbsp;&nbsp;
+        <asp:Button ID="btnfind" runat="server" OnClick="btnfind_Click" Text="Find" />
+    </center>
+
+</asp:Content>
